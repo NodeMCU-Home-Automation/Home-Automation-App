@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import org.springframework.web.client.RestTemplate;
 
+import maischifano.homeautomation.MainActivity;
 import maischifano.homeautomation.R;
 
 public class ToggleLedFragment extends Fragment {
@@ -38,7 +39,7 @@ public class ToggleLedFragment extends Fragment {
         protected Void doInBackground(Void... voids) {
             RestTemplate restTemplate = new RestTemplate();
             try {
-                restTemplate.put("http://192.168.178.22:8080/automatischeAntwort", "asd", String.class);
+                restTemplate.put(MainActivity.ipAdress+"automatischeAntwort", "asd", String.class);
             } catch (Exception e) {
                 e.printStackTrace();
             }
